@@ -6,9 +6,7 @@ const InspectionPDF = ({state}) => {
         <div>
             <InspectionDetails details={state.inspectionDetails} readOnly={true} onChange={()=>{}}/>
             <AdditionalRequirements state={state} handleCheck={()=>{}} />
-            <Footer />
         </div>
-
     )
 }
 
@@ -33,12 +31,5 @@ const CheckboxReq = ({checked, handleCheck, title}) => {
     )
 }
 
-const Footer = () => {
-    return(
-        <div>
-            <h4>All pesticides remain the property of Country Solutions Ltd</h4>
-            <h4>Tel: 07581 789990</h4>
-        </div>
-    )
-}
+
 export default InspectionPDF

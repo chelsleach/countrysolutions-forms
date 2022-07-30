@@ -27,7 +27,7 @@ const InspectionReport = () => {
         },
         products: [
             {
-                product: "sadas",
+                product: "",
                 pesticide: false
             },
             {
@@ -51,13 +51,22 @@ const InspectionReport = () => {
             <Header />
             <Title />
             <InspectionForm state={state} setState={setState} />
+            <Footer />
         </div>
 
     )
 }
 
+
 const Header = () => <h2>Country Solutions Ltd</h2>
 const Title = () => <h3>Inspection Report</h3>
-
+const Footer = () => {
+    return(
+        <div>
+            <h4>All pesticides remain the property of Country Solutions Ltd</h4>
+            <h4>Tel: 07581 789990</h4>
+        </div>
+    )
+}
 
 export default InspectionReport
