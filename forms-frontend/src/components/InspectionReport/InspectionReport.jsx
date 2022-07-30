@@ -4,46 +4,69 @@ import InspectionPDF from "./InspectionPDF";
 
 const InspectionReport = () => {
     const [state, setState] = useState({
-        date: "",
-        sheet: "",
-        nextVisit: "",
-        address: "",
-        phone: "",
-        email: "",
-        ac: "",
-        comdom: true,
-        extras: "",
-        risk: false,
-        riskCom: "",
-        reason: "",
-        areas: "",
-        product1: "",
-        product2: "",
-        pesticide1: "",
-        pesticide2: "",
-        lockedBait: false,
-        baitPlan: false,
-        guidance: false,
-        monitor: false,
-        comments: "",
-        recommendations: ""
+        inspectionDetails: {
+            date:"",
+            sheet: "",
+            nextVisit: "",
+        },
+        customerDetails:{
+            address: "",
+            phone: "",
+            email: ""
+        },
+        invoiceDetails:{
+            ac: "",
+            commercial: true,
+            extras: "",
+        },
+        visit: {
+            risk: false,
+            riskCom: "",
+            reason: "",
+            areas: ""
+        },
+        products: [
+            {
+                product: "",
+                pesticide: false
+            },
+            {
+                product: "",
+                pesticide: false
+            }
+        ],
+        addReq: {
+            lockedBait: false,
+            baitPlan: false,
+            guidance: false,
+            monitor: false
+        },
+        summary:{
+            comments: "",
+            recommendations: ""
+        }
     })
     return(
         <div className={'Report'}>
             <Header />
             <Title />
-            <InspectionForm state={state} setState={setState}/>
-            {/*{*/}
-            {/*    state.submitted ? <InspectionPDF state={state} /> :*/}
-            {/*        <InspectionForm state={state} setState={setState}/>*/}
-            {/*}*/}
+            <InspectionForm state={state} setState={setState} />
+            <Footer />
         </div>
 
     )
 }
 
+
 const Header = () => <h2>Country Solutions Ltd</h2>
 const Title = () => <h3>Inspection Report</h3>
-
+const Footer = () => {
+    return(
+        <div>
+            <h4>All pesticides remain the property of Country Solutions Ltd</h4>
+            <h4>Tel: 07581 789990</h4>
+        </div>
+    )
+}
 
 export default InspectionReport
