@@ -1,0 +1,9 @@
+.InspectionForm{
+    display: flex;
+    flex-direction: column;
+}
+
+.InspectionDetails{
+    display: flex;
+    flex-direction: row;
+}
