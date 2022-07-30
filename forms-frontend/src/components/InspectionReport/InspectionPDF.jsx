@@ -1,23 +1,14 @@
 import {Checkbox, FormControlLabel, FormGroup, TextField} from "@mui/material";
+import InspectionDetails from "./InspectionDetails";
 
 const InspectionPDF = ({state}) => {
     return(
         <div>
-            <InspectionDetails state={state} />
+            <InspectionDetails details={state.inspectionDetails} readOnly={true} onChange={()=>{}}/>
             <AdditionalRequirements state={state} handleCheck={()=>{}} />
             <Footer />
         </div>
 
-    )
-}
-
-const InspectionDetails = ({state}) => {
-    return(
-        <div>
-            <TextFieldReadOnly title={'Date'} info={state.date} />
-            <TextFieldReadOnly title={'Sheet'} info={state.sheet} />
-            <TextFieldReadOnly title={'Next Visit'} info={state.nextVisit} />
-        </div>
     )
 }
 
@@ -39,12 +30,6 @@ const CheckboxReq = ({checked, handleCheck, title}) => {
             onChange={handleCheck}
             inputProps={{ 'aria-label': 'controlled' }}
         />} label={title} />
-    )
-}
-
-const TextFieldReadOnly = ({title, info}) => {
-    return(
-        <TextField id="outlined-basic" label={title} variant="outlined" defaultValue={info} InputProps={{readOnly: true}}/>
     )
 }
 
